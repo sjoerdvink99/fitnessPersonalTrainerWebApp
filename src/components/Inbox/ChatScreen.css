@@ -1,4 +1,44 @@
 .chatScreen {
   flex: 0.7;
-  border: 1px solid red;
+  border: 1px solid lightgray;
+}
+
+.chatScreen__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.chatScreen__headerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.chatScreen__headerInfo > h4 {
+  padding-left: 8px;
+}
+
+.chatScreen__footer {
+  padding: 20px;
+}
+
+.chatScreen__footer > form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.chatScreen__footer > form > input {
+  position: fixed;
+  bottom: 30px;
+  width: 50%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.chatScreen__footer > form > button {
+  display: none;
 }

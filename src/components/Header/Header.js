@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
-import { Avatar } from "@material-ui/core";
-import { HelpOutline } from "@material-ui/icons";
+import { Avatar, Button, IconButton } from "@material-ui/core";
+import { NotificationsNoneOutlined } from "@material-ui/icons";
 
 export default function Header() {
   return (
@@ -10,8 +10,9 @@ export default function Header() {
         <h1>Logo</h1>
       </div>
       <div className='header__right'>
-        <Avatar src='' alt='Sjoerd' />
-        <HelpOutline />
+        <NotificationsNoneOutlined className='header__rightNotificationIcon' />
+        <Avatar className='header__rightAvatar' src='' alt='Sjoerd' />
+        <h4>Trainer Name</h4>
       </div>
     </div>
   );

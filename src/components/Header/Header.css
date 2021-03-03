@@ -16,6 +16,19 @@
 }
 
 .header__right > .MuiSvgIcon-root {
-  padding-left: 20px;
+  margin-left: 30px;
+  color: white;
+}
+
+.header__rightAvatar {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.header__right > h4 {
+  color: white;
+}
+
+.header__rightNotificationIcon {
   color: white;
 }

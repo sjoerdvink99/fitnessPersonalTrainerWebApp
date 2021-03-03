@@ -2,19 +2,27 @@ import React from "react";
 import "./Sidebar.css";
 import SidebarRow from "./SidebarRow";
 import {
-  AccountBox,
   CalendarToday,
-  Dashboard,
-  Message,
+  CreditCardOutlined,
+  DashboardOutlined,
+  FitnessCenterOutlined,
+  MessageOutlined,
+  PeopleOutlined,
+  PersonPinOutlined,
+  SubjectOutlined,
 } from "@material-ui/icons";
 
 export default function Sidebar() {
   return (
     <div className='sidebar'>
-      <SidebarRow Icon={Dashboard} title='Dashboard' />
+      <SidebarRow Icon={DashboardOutlined} title='Dashboard' />
       <SidebarRow Icon={CalendarToday} title='Calendar' />
-      <SidebarRow Icon={AccountBox} title='Clients' />
-      <SidebarRow Icon={Message} title='Inbox' />
+      <SidebarRow Icon={PersonPinOutlined} title='Clients' />
+      <SidebarRow Icon={PeopleOutlined} title='Groups' />
+      <SidebarRow Icon={MessageOutlined} title='Inbox' />
+      <SidebarRow Icon={FitnessCenterOutlined} title='Exercises' />
+      <SidebarRow Icon={SubjectOutlined} title='Workout templates' />
+      <SidebarRow Icon={CreditCardOutlined} title='Payments' />
     </div>
   );
 }

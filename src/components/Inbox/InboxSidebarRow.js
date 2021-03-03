@@ -1,10 +1,21 @@
 import React from "react";
 import "./InboxSidebarRow.css";
 import { Avatar } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
-export default function InboxSidebarRow({ name }) {
+export default function InboxSidebarRow({ name, id }) {
+  const history = useHistory();
+
+  const selectChannel = () => {
+    if (id) {
+      history.push(`/room/${id}`);
+    } else {
+      history.push(name);
+    }
+  };
+
   return (
-    <div className='inboxSidebarRow'>
+    <div className='inboxSidebarRow' onClick={selectChannel}>
       <div className='inboxSidebarRow__info'>
         <div className='inboxSidebarRow__person'>
           <Avatar />
