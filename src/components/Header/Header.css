@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding: 15px;
+}
+
+.header__left > h1 {
+  color: white;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right > .MuiSvgIcon-root {
+  padding-left: 20px;
+  color: white;
+}

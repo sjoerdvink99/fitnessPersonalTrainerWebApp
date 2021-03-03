@@ -1,0 +1,22 @@
+.inboxSidebar {
+  flex: 0.3;
+}
+
+.inboxSidebar > input {
+  width: 80%;
+}
+
+.inboxSidebar__input {
+  display: flex;
+  align-items: center;
+  background-color: #eff2f5;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 999px;
+}
+
+.inboxSidebar__input > input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+}

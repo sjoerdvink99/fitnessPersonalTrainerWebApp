@@ -1,0 +1,23 @@
+.inboxSidebarRow:hover {
+  background-color: lightgray;
+}
+
+.inboxSidebarRow__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.inboxSidebarRow__person {
+  display: flex;
+  align-items: center;
+}
+
+.inboxSidebarRow__person > h4 {
+  padding-left: 8px;
+}
+
+.inboxSidebarRow > hr {
+  border: 1px solid lightgray;
+}
