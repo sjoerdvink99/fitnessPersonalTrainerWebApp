@@ -4,24 +4,41 @@ import { MoreVert } from "@material-ui/icons";
 import Message from "./Message";
 import "./ChatScreen.css";
 import db from "../../firebase";
+import { useParams } from "react-router-dom";
+import firebase from "firebase";
 
 export default function ChatScreen() {
+  const { chatId } = useParams();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    db.collection("trainers")
-      .doc("Sjoerd Vink")
-      .collection("clients")
-      .doc("Piet Veldhuizen")
-      .collection("messages")
-      .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()));
-      });
-  }, []);
+    if (chatId) {
+      db.collection("trainers")
+        .doc("4ynzDgH7FhsetQ3NQePe")
+        .collection("clients")
+        .doc(chatId)
+        .collection("messages")
+        .onSnapshot((snapshot) => {
+          setMessages(snapshot.docs.map((doc) => doc.data()));
+        });
+    }
+  }, [chatId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    db.collection("trainers")
+      .doc("4ynzDgH7FhsetQ3NQePe")
+      .collection("clients")
+      .doc(chatId)
+      .collection("messages")
+      .add({
+        message: input,
+        timestamp: firebase.firestore.FlieldValue.serverTimestamp(),
+        user: "Sjoerd V",
+      });
+
     setInput("");
   };
 

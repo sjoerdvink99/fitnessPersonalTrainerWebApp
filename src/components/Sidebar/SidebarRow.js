@@ -6,7 +6,7 @@ export default function SidebarRow({ Icon, title }) {
   const history = useHistory();
 
   const selectPage = () => {
-    history.push(title.toLowerCase());
+    history.push(`/${title.toLowerCase()}/`);
   };
 
   return (

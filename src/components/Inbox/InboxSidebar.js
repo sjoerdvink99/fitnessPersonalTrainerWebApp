@@ -11,7 +11,7 @@ export default function InboxSidebar() {
 
   useEffect(() => {
     db.collection("trainers")
-      .doc(user)
+      .doc("4ynzDgH7FhsetQ3NQePe")
       .collection("clients")
       .onSnapshot((snapshot) =>
         setClients(
@@ -29,9 +29,6 @@ export default function InboxSidebar() {
         <Search />
         <input placeholder='Search Clients' />
       </div>
-      <InboxSidebarRow name='Sjoerd Vink' />
-      <InboxSidebarRow name='Sjoerd Vink' />
-      <InboxSidebarRow name='Sjoerd Vink' />
       {clients.map((client) => (
         <InboxSidebarRow name={client.name} id={client.id} />
       ))}

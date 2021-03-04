@@ -8,9 +8,9 @@ export default function InboxSidebarRow({ name, id }) {
 
   const selectChannel = () => {
     if (id) {
-      history.push(`/room/${id}`);
+      history.push(`/inbox/${id}`);
     } else {
-      history.push(name);
+      history.push(`/inbox/${name}`);
     }
   };
 
