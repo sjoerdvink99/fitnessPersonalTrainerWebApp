@@ -1,9 +1,12 @@
 import React from "react";
 import "./Header.css";
-import { Avatar, Button, IconButton } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import { NotificationsNoneOutlined } from "@material-ui/icons";
+import { useStateValue } from "../../StateProvider";
 
 export default function Header() {
+  const [{ user }] = useStateValue();
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -12,7 +15,7 @@ export default function Header() {
       <div className='header__right'>
         <NotificationsNoneOutlined className='header__rightNotificationIcon' />
         <Avatar className='header__rightAvatar' src='' alt='Sjoerd' />
-        <h4>Trainer Name</h4>
+        <h4>{user.email}</h4>
       </div>
     </div>
   );

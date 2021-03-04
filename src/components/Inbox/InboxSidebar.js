@@ -11,7 +11,7 @@ export default function InboxSidebar() {
 
   useEffect(() => {
     db.collection("trainers")
-      .doc("4ynzDgH7FhsetQ3NQePe")
+      .doc(user.id)
       .collection("clients")
       .onSnapshot((snapshot) =>
         setClients(

@@ -6,16 +6,18 @@ import "./ChatScreen.css";
 import db from "../../firebase";
 import { useParams } from "react-router-dom";
 import firebase from "firebase";
+import { useStateValue } from "../../StateProvider";
 
 export default function ChatScreen() {
   const { chatId } = useParams();
+  const [{ user }] = useStateValue();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     if (chatId) {
       db.collection("trainers")
-        .doc("4ynzDgH7FhsetQ3NQePe")
+        .doc(user.id)
         .collection("clients")
         .doc(chatId)
         .collection("messages")
@@ -36,7 +38,7 @@ export default function ChatScreen() {
       .add({
         message: input,
         timestamp: firebase.firestore.FlieldValue.serverTimestamp(),
-        user: "Sjoerd V",
+        user: user.name,
       });
 
     setInput("");
