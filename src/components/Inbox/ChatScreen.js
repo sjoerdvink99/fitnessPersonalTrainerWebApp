@@ -17,7 +17,7 @@ export default function ChatScreen() {
   useEffect(() => {
     if (chatId) {
       db.collection("trainers")
-        .doc(user.id)
+        .doc(user.uid)
         .collection("clients")
         .doc(chatId)
         .collection("messages")
@@ -31,13 +31,13 @@ export default function ChatScreen() {
     e.preventDefault();
 
     db.collection("trainers")
-      .doc("4ynzDgH7FhsetQ3NQePe")
+      .doc(user.uid)
       .collection("clients")
       .doc(chatId)
       .collection("messages")
       .add({
         message: input,
-        timestamp: firebase.firestore.FlieldValue.serverTimestamp(),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         user: user.name,
       });
 
@@ -49,7 +49,7 @@ export default function ChatScreen() {
       <div className='chatScreen__header'>
         <div className='chatScreen__headerInfo'>
           <Avatar />
-          <h4>Sjoerd Vink</h4>
+          <h4>Naam</h4>
         </div>
         <MoreVert />
       </div>

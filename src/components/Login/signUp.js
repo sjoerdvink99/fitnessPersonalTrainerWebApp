@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useStateValue } from "../../StateProvider";
-import "./signUp.css";
+import "./SignUp.css";
 import { Button } from "@material-ui/core";
-import db, { auth, provider } from "../../firebase";
+import db, { auth } from "../../firebase";
 import { actionTypes } from "../../reducer";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -11,7 +12,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [{ user }, dispatch] = useStateValue();
 
-  const signUp = (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
     auth
       .createUserWithEmailAndPassword(email, password)
@@ -34,15 +35,15 @@ export default function SignUp() {
     <div className='login'>
       <div className='login__container'>
         <img
-          src='https://foundercontent.com/static/media/slack_icon.55ad9eab.png'
+          src='https://weareryu.nl/wp-content/uploads/2019/09/virtuagym-2.png'
           alt=''
         />
-        <h1>Sign up for a new account</h1>
-        <form onSubmit={signUp}>
+        <h1>Create a New Account</h1>
+        <form onSubmit={handleSignUp}>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder='firstName lastName'
+            placeholder='Full Name'
           />
           <input
             value={email}
@@ -55,8 +56,13 @@ export default function SignUp() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Password'
           />
-          <button type='submit'>Sign up</button>
+          <Button className='login__formButton' type='submit'>
+            Create Account
+          </Button>
         </form>
+        <Link to='/'>
+          <p>Already have an account? Log-in here</p>
+        </Link>
       </div>
     </div>
   );

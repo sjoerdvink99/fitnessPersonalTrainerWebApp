@@ -1,11 +1,11 @@
-.login {
+.signIn {
   height: 100vh;
   background-color: #f8f8f8;
   display: grid;
   place-items: center;
 }
 
-.login__container {
+.signIn__container {
   padding: 100px;
   text-align: center;
   background-color: white;
@@ -13,23 +13,23 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-.login__container > img {
+.signIn__container > img {
   object-fit: contain;
   height: 100px;
   margin-bottom: 40px;
 }
 
-.login__container > form {
+.signIn__container > form {
   display: flex;
   flex-direction: column;
 }
 
-.login__container > form > input {
+.signIn__container > form > input {
   padding: 8px 0;
   margin: 8px 0;
 }
 
-.login__formButton {
+.signIn__formButton {
   margin-top: 50px;
   text-transform: inherit !important;
   background-color: orange !important;

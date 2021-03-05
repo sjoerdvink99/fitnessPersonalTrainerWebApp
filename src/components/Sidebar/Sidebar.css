@@ -5,3 +5,10 @@
   border-top: 1px solid #49274b;
   max-width: 260px;
 }
+
+.sidebar__addClient {
+  color: white !important;
+  background-color: orange !important;
+  margin-top: 10px !important;
+  width: 90%;
+}

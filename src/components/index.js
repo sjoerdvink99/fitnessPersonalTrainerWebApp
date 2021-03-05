@@ -6,4 +6,5 @@ export { default as Clients } from "./Clients/Clients";
 export { default as Inbox } from "./Inbox/Inbox";
 export { default as InboxSidebar } from "./Inbox/InboxSidebar";
 export { default as ChatScreen } from "./Inbox/ChatScreen";
-export { default as signUp } from "./Login/signUp";
+export { default as SignUp } from "./Login/SignUp";
+export { default as SignIn } from "./Login/SignIn";

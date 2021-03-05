@@ -8,7 +8,8 @@ import {
   Clients,
   Inbox,
   InboxSidebar,
-  signUp,
+  SignUp,
+  SignIn,
 } from "./components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -20,7 +21,14 @@ function App() {
     <div className='app'>
       <Router>
         {!user ? (
-          <signUp />
+          <Switch>
+            <Route path='/signup'>
+              <SignUp />
+            </Route>
+            <Route path='/'>
+              <SignIn />
+            </Route>
+          </Switch>
         ) : (
           <>
             <Header />
