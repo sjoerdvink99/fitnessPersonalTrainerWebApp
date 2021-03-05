@@ -40,7 +40,7 @@
 }
 
 .popUpAddClient__containerButton {
-  margin-top: 10px;
+  margin-top: 10px !important;
   text-transform: inherit !important;
   background-color: orange !important;
   color: white !important;

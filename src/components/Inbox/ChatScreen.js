@@ -13,9 +13,18 @@ export default function ChatScreen() {
   const [{ user }] = useStateValue();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [clientName, setClientName] = useState("");
 
   useEffect(() => {
     if (chatId) {
+      db.collection("trainers")
+        .doc(user.uid)
+        .collection("clients")
+        .doc(chatId)
+        .onSnapshot((snapshot) => {
+          setClientName(snapshot.data().name);
+        });
+
       db.collection("trainers")
         .doc(user.uid)
         .collection("clients")
@@ -29,7 +38,6 @@ export default function ChatScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     db.collection("trainers")
       .doc(user.uid)
       .collection("clients")
@@ -38,9 +46,8 @@ export default function ChatScreen() {
       .add({
         message: input,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        user: user.name,
+        name: user.email,
       });
-
     setInput("");
   };
 
@@ -49,13 +56,13 @@ export default function ChatScreen() {
       <div className='chatScreen__header'>
         <div className='chatScreen__headerInfo'>
           <Avatar />
-          <h4>Naam</h4>
+          <h4>{clientName}</h4>
         </div>
         <MoreVert />
       </div>
       <div className='chatScreen__body'>
-        {messages.map(({ message, timestamp, user }) => (
-          <Message message={message} timestamp={timestamp} user={user} />
+        {messages.map(({ message, timestamp, name }) => (
+          <Message message={message} timestamp={timestamp} user={name} />
         ))}
       </div>
       <div className='chatScreen__footer'>
