@@ -53,7 +53,7 @@ function App() {
                 <Route path='/exercises/'>
                   <h1>Exercises</h1>
                 </Route>
-                <Route path='/workouttemplates/'>
+                <Route path='/workout-templates/'>
                   <h1>Workout-templates</h1>
                 </Route>
                 <Route path='/payments/'>

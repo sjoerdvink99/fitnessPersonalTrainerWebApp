@@ -25,7 +25,7 @@ export default function Sidebar() {
       <SidebarRow Icon={PeopleOutlined} title='Groups' />
       <SidebarRow Icon={MessageOutlined} title='Inbox' />
       <SidebarRow Icon={FitnessCenterOutlined} title='Exercises' />
-      <SidebarRow Icon={SubjectOutlined} title='Workout templates' />
+      <SidebarRow Icon={SubjectOutlined} title='Workout-templates' />
       <SidebarRow Icon={CreditCardOutlined} title='Payments' />
       <Button
         onClick={() => setButtonPopup(true)}
